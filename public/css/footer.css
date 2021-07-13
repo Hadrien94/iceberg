@@ -1,0 +1,45 @@
+/*==========Footer=========*/
+footer{
+    /* margin-top:5rem; */
+    padding-top:1.5rem;
+    padding-bottom:1rem;
+    background-color:rgb(40, 42, 45);
+
+
+}
+
+.footer{
+    background-color: #665FB3;
+    height: 20%;
+    margin-top: 80px;
+}
+
+img.logo{
+    height:30px;
+    padding-left:40px;
+}
+
+/* Form */
+.transparent {
+    background: rgba(0,0,0,0);
+}
+
+.newsletter h3{
+    color: white;
+    font-family: "Open Sans", sans-serif;
+}
+
+.newsletter h4{
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+.newsletter button{
+    background-color: white;
+}
+
+.fa-envelope:before {
+    margin-right: 20px;
+    color: white;
+}

@@ -1,0 +1,46 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+    Inscription
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="container">
+        <h3>Inscrivez-vous</h3>
+        <br>
+        <!-- Nav tabs -->
+        <div class="col-xs-8 col-xs-push-2 col-md-4">
+            <ul class="nav" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#uploadTab" aria-controls="uploadTab" role="tab" data-toggle="tab" style="color:blue">
+                        <button type="button" class="btn btn-lg btn-outline-secondary" style="margin-right:10px">
+                            Artiste
+                        </button>
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#browseTab" aria-controls="browseTab" role="tab" data-toggle="tab" style="color:blue">
+                        <button type="button" class="btn btn-lg btn-outline-secondary">Porteurs de projets</button>
+                    </a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <br>
+
+                <div role="tabpanel" class="tab-pane active" id="uploadTab">
+                    {{ form(formMembre, {attr:{novalidate: 'novalidate' }}) }}
+                </div>
+                <div role="tabpanel" class="tab-pane" id="browseTab">
+                    {{ form(formOrga, {attr:{novalidate: 'novalidate' }}) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+

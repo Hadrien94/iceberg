@@ -1,0 +1,277 @@
+{% extends "layout.html.twig" %}
+
+
+{% block page_title %}
+    Publiez votre appel à projets
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css"
+          integrity="sha256-AWdeVMUYtwLH09F6ZHxNgvJI37p+te8hJuSMo44NVm0=" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+{% endblock %}
+
+
+{% block final_javascripts %}
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"
+            integrity="sha256-SUaao5Q7ifr2twwET0iyXVy0OVnuFJhGVi5E/dqEiLU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor.create(document.querySelector('#projet_description'));
+        $('.dropify').dropify({
+            messages: {
+                default: 'Glissez-d&eacute;posez un fichier ici ou cliquez',
+                replace: 'Glissez-d&eacute;posez un fichier ou cliquez pour remplacer',
+                remove: 'Supprimer',
+                error: 'D&eacute;sol&eacute;, le fichier est trop volumineux'
+            }
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+
+
+    {# BANDEAU#}
+    <div id="bigtitle" class="jumbotron">
+
+        {# CARROUSEL #}
+        <div class="container">
+            <div id="carouselExampleFade" class="carousel slide " data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="size"
+                             src="https://www.dax.fr/wp-content/uploads/2019/03/le-conservatoire-de-musique-et-de-danse.jpg"
+                             class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="size"
+                             src="https://www.dax.fr/wp-content/uploads/2019/03/le-conservatoire-de-musique-et-de-danse.jpg"
+                             class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="size"
+                             src="https://www.dax.fr/wp-content/uploads/2019/03/le-conservatoire-de-musique-et-de-danse.jpg"
+                             class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+
+
+            {#div enfant jumbotron#}
+            <div class="enfant-jumbotron">
+                <div class="container">
+                    <h1 class="slogan">Un projet ? </h1>
+                    <hr class="traitBlanc">
+                    <h2 class="accroche">Postez votre appel aux artistes</h2>
+                    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+
+                </div>
+            </div>
+            {#div enfant#}
+        </div>
+        {# fin carrousel #}
+
+
+    </div>
+
+    {% include 'Components/_modalProfil.html.twig' %}
+
+    <div class="container effect1" id="#section02">
+        {{ form_start(form, {attr:{novalidate: 'novalidate' }}) }}
+
+        {{ form_errors(form) }}
+        <!-- TITRE DE L'APPEL -->
+        <div class="form-group">
+
+            <div class="col-md-3">
+
+                <h3 class="titre-appel"> {{ form_label(form.titre) }}</h3>
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.titre) }}
+
+            </div>
+
+        </div>
+
+        <!-- CATEGORIE -->
+        <div class="form-group">
+            <div class="col-md-6">
+                <h3><label>{{ form_label(form.domaine) }}</label></h3>
+            </div>
+            <div class="col-md-12 categorie">
+                <div class="col-md-4">
+                    {% for domaine in form.domaine %}
+                        {% if loop.index < 4 %}
+                            {{ form_widget(domaine) }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="col-md-4">
+                    {% for domaine in form.domaine %}
+                        {% if loop.index < 7 %}
+                            {{ form_widget(domaine) }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="col-md-4">
+                    {% for domaine in form.domaine %}
+                        {% if loop.index < 10 %}
+                            {{ form_widget(domaine) }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
+        <!-- DATE DEBUT INSCRIPTION -->
+        <div class="form-group">
+            <div class="col-md-6">
+                <h3>{{ form_label(form.dateDebutInscription) }}</h3>
+            </div>
+            <div class="col-md-4">
+                {{ form_widget(form.dateDebutInscription) }}
+            </div>
+        </div>
+
+        <!-- DATE FIN INSCRIPTION -->
+        <div class="form-group">
+            <div class="col-md-6">
+                <h3>{{ form_label(form.dateFinInscription) }}</h3>
+            </div>
+            <div class="col-md-4">
+                {{ form_widget(form.dateFinInscription) }}
+            </div>
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div class="form-group">
+            <div class="col-md-6">
+                <h3>{{ form_label(form.description) }}</h3>
+            </div>
+            <div class="col-md-12">
+                {{ form_widget(form.description) }}
+            </div>
+        </div>
+
+
+        <!-- SITE WEB -->
+        <div class="form-group">
+            <div class="col-md-6">
+                <h3>{{ form_label(form.website) }}</h3>
+            </div>
+            <div class="col-md-6">
+                {{ form_widget(form.website) }}
+            </div>
+        </div>
+
+
+        <!-- DATE DEBUT EVENEMENT -->
+        <div class="form-group">
+            <div class="col-md-6">
+                <h3>{{ form_label(form.dateDebutEvenement) }}</h3>
+            </div>
+            <div class="col-md-4">
+                {{ form_widget(form.dateDebutEvenement) }}
+            </div>
+        </div>
+
+
+        <!-- DATE FIN EVENEMENT -->
+        <div class="form-group">
+            <div class="col-md-6">
+                <h3>{{ form_label(form.dateFinEvenement) }}</h3>
+            </div>
+            <div class="col-md-4">
+                {{ form_widget(form.dateFinEvenement) }}
+            </div>
+        </div>
+
+
+        <!-- IMAGE -->
+        <div class="form-group">
+            <div class="col-md-6">
+                <h3>{{ form_label(form.image) }}</h3>
+            </div>
+            <div class="col-md-4">
+                {{ form_widget(form.image) }}
+            </div>
+        </div>
+
+
+        <!-- VILLE -->
+        <div class="form-group">
+            <div class="col-md-6">
+                <h3>{{ form_label(form.ville) }}</h3>
+            </div>
+            <div class="col-md-4">
+                {{ form_widget(form.ville) }}
+            </div>
+        </div>
+
+
+        <!-- PAYS -->
+        <div class="form-group">
+            <div class="col-md-6">
+                <h3>{{ form_label(form.pays) }}</h3>
+            </div>
+            <div class="col-md-4">
+                {{ form_widget(form.pays) }}
+            </div>
+        </div>
+
+
+        <!-- BUDGET -->
+        <div class="form-group">
+            <div class="col-md-6">
+                <h3>{{ form_label(form.budget) }}</h3>
+            </div>
+            <div class="col-md-4">
+                {{ form_widget(form.budget) }}
+            </div>
+        </div>
+
+
+        <!-- FRAIS -->
+        <div class="form-group">
+            <div class="col-md-6">
+                <h3>{{ form_label(form.frais) }}</h3>
+            </div>
+            <div class="col-md-4">
+                {{ form_widget(form.frais) }}
+            </div>
+        </div>
+
+
+        <!-- DOCUMENT PDF -->
+        <div class="form-group">
+            <div class="col-md-6">
+                <h3>{{ form_label(form.document) }}</h3>
+            </div>
+            <div class="col-md-4">
+                {{ form_widget(form.document) }}
+            </div>
+        </div>
+
+
+        {{ form_end(form) }}
+    </div><!-- /.container -->
+
+
+{% endblock %}
+
+

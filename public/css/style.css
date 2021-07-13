@@ -1,0 +1,409 @@
+/*------------------------------------------------------------------
+
+    [Main Style Stylesheet]
+    Project:       ICEBERG
+    Version:        0
+    Author:         Team Iceberg
+    Last change:    12/06/19
+
+
+-------------------------------------------------------------------
+
+    [Table of contents]
+    01. Setting
+    02. Components
+    03. Header
+    04. Menu
+    05. Content
+    06. Page Reviews
+    07. Page Category
+    08. Page Video
+    09. Page Article
+    10. Page 404
+    11. Page Contact
+    12. Footer
+
+-------------------------------------------------------------------*/
+/*==========Setting=========*/
+
+body {
+    font-family: "Open Sans", sans-serif;
+    min-width: 320px;
+    font-size: 100%;
+    color: #333;
+    background-image: linear-gradient(135deg, #f4f5f7 41.67%, #ededed 41.67%, #ededed 50%, #f4f5f7 50%, #f4f5f7 91.67%, #ededed 91.67%, #ededed 100%);
+    background-size: 16.97px 16.97px;
+    background-attachment:fixed;
+}
+
+p {
+    font-size: 12px;
+}
+
+ul, li {
+    padding: 0px;
+    list-style: none;
+    margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.4;
+    font-family: "Open Sans", sans-serif;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h1 {
+
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    color: #665FB3;
+    padding: 100px;
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 28px;
+    color: #665FB3;
+    padding-bottom: 40px;
+}
+
+h3 {
+    color: #313280;
+}
+
+h4 {
+    color: #313280;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+a:link {
+    text-decoration: none;
+    color: white;
+}
+
+i {
+    color: #313131;
+}
+
+.poubelle {
+    background-color: #665FB3;
+    border-radius: 20px;
+}
+
+/*==========CONTENT=========*/
+main {
+    display: flex;
+}
+
+/*==========Aside=========*/
+
+.aside {
+    padding: 10px;
+    border-radius: 10px;
+    background: #f7f4f4;
+    margin-top: 20px;
+}
+
+.sdTitre {
+    font-size: 1.6rem;
+    margin-top: 30px;
+}
+
+.champs {
+    margin-top: 12px;
+}
+
+.label-size{
+    font-size: 17px;
+}
+
+input[type=checkbox]{
+    width: 15px;
+    height: 15px;
+}
+
+/*==========Cards=========*/
+
+.lib-panel .lib-row.lib-header .lib-header-seperator {
+    height: 2px;
+    width: 26px;
+    background-color: #BD5D38;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0 0 10px 3px rgba(0, 0, 0, .10);
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, .10);
+    position: relative;
+}
+
+.titre {
+    position: absolute;
+    z-index: 5;
+    right: -16px;
+    top: -22px;
+}
+
+.titre h3 {
+    display: inline-block;
+    padding: 11px 22px;
+    background-color: #313280;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.imageContent{
+    max-height: 241px;
+}
+
+img.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ .icones {
+     font-size: 2em;
+     position: absolute;
+     bottom: 14px;
+     right: -16px;
+ }
+
+ .card-body {
+     padding: 25px 8px 8px 8px;
+ }
+
+ .carte-groupe {
+     margin-top: 0;
+ }
+
+ .carte-groupe a {
+     color:#313280;
+ }
+
+.carte-groupe a:link {
+    color:#313280;
+}
+
+@media only screen and (min-width: 991px) {
+    .recherche {
+        padding: 0;
+    }
+
+    .sdTitre {
+        padding-left: 15px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .carte-groupe {
+
+        margin: auto;
+        margin-top: 204px;
+    }
+    .aside {
+        position: fixed;
+        z-index: 100;
+        margin-top: 25px;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .aside h3{
+        font-size: 1.3rem;
+    }
+
+    .sdTitre {
+        font-size: 1.1rem;
+        align-self: center;
+        margin: 0;
+    }
+
+    .champs{
+        margin: 0;
+        padding-left: 7px ;
+        padding-right: 7px ;
+    }
+
+
+    .recherche-xs{
+        padding:0;
+    }
+
+    .my-submit {
+        align-self: flex-end;
+    }
+
+    .contenu {
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .icones {
+        right: 18px;
+    }
+
+    .carte-groupe {
+        margin-top: 159px;
+    }
+
+    .aside {
+        margin-top: -13px;
+    }
+
+    header {
+        margin-bottom: 0 !important;
+    }
+
+    input[type=checkbox] {
+        width: 12px;
+        height: 12px;
+    }
+
+    .label-size {
+        font-size: 14px;
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .carte-groupe {
+        margin-top: 127px;
+    }
+
+    .aside h3{
+        font-size: 1rem;
+    }
+
+    .sdTitre {
+        font-size: .8rem;
+    }
+
+
+    input[type=checkbox] {
+        width: 10px;
+        height: 10px;
+    }
+
+    .label-size {
+        font-size: 10px;
+    }
+}
+
+
+/*==========Admin List=========*/
+
+
+i.suppression {
+    color:white;
+}
+
+button.modalSuppression{
+    background-color:#665FB3;
+    border-radius: 20px;
+}
+
+button.suppression{
+    background-color: #665FB3;
+}
+
+div.modal-footer button{
+    background-color: #665FB3;
+}
+
+/*==========Inscription=========*/
+div.inscription {
+     display: flex;
+     justify-content: space-around;
+ }
+
+div.inscription div.row {
+    border: 1px solid lightgray;
+}
+
+button.inscription {
+    background-color: #665FB3;
+    color:white;
+}
+
+#home {
+    clip-path: url(#cache);
+}
+
+#red {
+    fill: none;
+    opacity: 0.15;
+    stroke: #CE1B5F;
+    stroke-width: 12;
+    stroke-miterlimit:10;
+    animation: show 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+#blue {
+    fill: none;
+    opacity: 0.15;
+    stroke: #06A1C4;
+    stroke-width: 12;
+    stroke-miterlimit:10;
+    animation: show 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+#light-blue {
+    fill: none;
+    opacity: 0.15;
+    stroke: #06A1C4;
+    stroke-width: 6;
+    stroke-miterlimit:10;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 800;
+    animation: draw 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0.15;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.15;
+    }
+}
+
+
+div#listUser{
+    padding-top:50px;
+}
+
+
